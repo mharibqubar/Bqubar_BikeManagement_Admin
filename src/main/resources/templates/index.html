@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="https://thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BQUBAR</title>
+
+   <!-- Bootstrap -->
+     <link th:href="@{/css/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+     
+     <link th:href="@{/css/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+    <!-- NProgress -->
+    <link th:href="@{/css/nprogress/nprogress.css}" rel="stylesheet">
+    <link th:href="@{/css/google-code-prettify/bin/prettify.min.css}" rel="stylesheet">
+    <link th:href="@{/css/custom.min.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.min.css}" rel="stylesheet">
+  </head>
+
+  <body class="logins">
+  <div class="bgcolor">
+  
+  <div style="width:500px; height:500px;  position: absolute; z-index: 100;"></div>
+  
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content" style="background: #000; padding: 20px; opacity: 0.7;">
+            <form action="/login" method="post">
+              <h1 style="color: #fff;">Login</h1>
+               <p style="color:red" th:text="${errMsg} ? ${errMsg} : ''" ></p>
+              <div>
+                <input type="text" class="form-control" name="email" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" name="pwd" placeholder="Password" required="" />
+              </div>
+              <div>
+                 <button class="btn btn-default submit" style="color: #fff; font-size: 14px;" type="submit">Login</button>
+                 <!-- <a class="btn btn-default submit" style="color: #fff; font-size: 14px;">Log in</a> -->
+                <a class="reset_pass" href="#" style="color:#fff; font-size: 14px;">Lost your password?</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link" style="color:#fff; font-size: 14px;">New to site?
+                  <a href="#signup" class="to_register" style="color:#fff; font-size: 14px;"> Create Account </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content" style="background: #000; padding: 20px; opacity: 0.7;">
+            <form>
+              <h1 style="color: #fff;">Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html" style="color: #fff; font-size: 14px;">Submit</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link" style="color: #fff; font-size: 14px;">Already a member ?
+                  <a href="#signin" class="to_register" style="color: #fff; font-size: 14px;"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

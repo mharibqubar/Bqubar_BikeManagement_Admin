@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="https://thymeleaf.org"
+      layout:decorate="_layout">
+   <div layout:fragment="content">
+   <div class="right_col" role="main">
+          <div class="">
+
+            <div class="page-title">
+              <div class="title_left">
+                <h3>BQUBAR</h3>
+              </div>
+            </div>
+
+            <div class="clearfix">
+            
+            
+            </div>
+
+            <div class="row">
+				
+              <div class="col-md-12">
+              <div class="x_panel">
+                 
+				
+				  
+				   <div class="col-md-12"> 
+				  
+		<div class="x_content" >
+                 <!-- start -->
+                 <span style="color:red" th:text="${errorMsg} ? ${errorMsg} : '' "></span>
+                    <div class="col-md-3" th:each="bike: ${bikes}">
+						<div class="imgborder">
+						<div class="proimg">
+							<img th:src="@{${'/img/bikes/'+bike.getId()+'_' +bike.getBikeImg()}}" alt="" width="160" />
+							</div>
+						<div class="bgimg">
+						<div>
+						<label class="fontw"><span th:text="${bike.getBrand()}"/><span th:text="  ${bike.getEngine()}"/></label>	<br>
+						<label>Price on Road by Showroom</label>	<br>
+						<label>Avg. Ex-Showroom Price : &nbsp;<span th:text="${bike.getPrice()}"></span></label>	
+							</div>	
+						<div class="sharemore">
+						<form th:action="@{/shareBike}" method="post">
+							<input type="hidden" th:value="${bike.getId()}" name="shareId" >
+								<input type="submit" value="Share" class="sharebutton">
+						</form>
+							<!-- <span class="sharebutton">Share</span> -->
+							<span><a th:href="@{'/bikePreview?bikeId='+${bike.getId()}}" style="color:green">More</a></span>
+							</div>	
+						</div>
+						</div>
+						   
+						   </div>
+						   <!--  end -->
+							
+                  </div>
+				  </div>
+				  
+				  
+             
+                </div>
+              </div>       
+              
+            </div>
+              
+          </div>
+        </div>
+  </div>
+  </html>

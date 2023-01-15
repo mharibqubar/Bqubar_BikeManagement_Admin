@@ -1,0 +1,110 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="https://thymeleaf.org"
+      layout:decorate="_layout">
+   <div layout:fragment="content">
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+
+            <div class="page-title">
+              <div class="title_left">
+                <h3>BQUBAR</h3>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+              <div style="display:flex;">
+<div class="targetarea" style="border:1px solid #eee"><img id="multizoom1" style="width: 275px;height: 294px;" alt="zoomable" title="" th:src="@{${'/img/bikes/'+bikePreview.getBikeImg()}}"/></div>
+<div id="description"><span th:text="${bikePreview.getBrand()}"></span></div>
+<div style="margin: 0 0 0 30px; display:flex;">
+<div>
+<div class="pulsarheading"><span th:text="${bikePreview.getBrand()}"></span></div>
+
+<div>
+<label>Brand: <span th:text="${bikePreview.getBrand()}"></span></label><br>
+<label>Categories: <span th:text="${bikePreview.getWheels()}"></span></label>
+<div>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+<div>
+<label class="mrp">M.R.P.:</label><span class="pricebike">₹52,990.00</span><br>
+<label class="mrp">Price:</label><span class="pricebike"><span th:text="${bikePreview.getPrice()}"></span></span><br>
+<label class="mrp">You Save:</label><span class="pricebike">₹13,000.00 (25%)</span><br>
+<span style="color:#F60; font-size:16px;">Inclusive of all taxes</span>
+</div>
+<div style="margin:40px 0 0 0;">
+<label class="mrp">Series:</label><span>Motorcycle</span><br>
+<label class="mrp">Brand:</label><span th:text="${bikePreview.getBrand()}"></span><br>
+<label class="mrp">Engine Capacity:</label><span th:text="${bikePreview.getEngine()}"></span><br>
+<label class="mrp">Mileage:</label><span th:text="${bikePreview.getMileage()}"></span><br>
+<label class="mrp">Transmission:</label><span th:text="${bikePreview.getTransmission()}"></span><br>
+<label class="mrp">Fuel Tank Capacity:</label><span th:text="${bikePreview.getFuelType()}"></span><br>
+<label class="mrp">Seat Capacity:</label><span th:text="${bikePreview.getSeatCapacity()}"></span><br>
+
+</div>
+<div style=" width:465px;     line-height: 23px;">
+<span style="font-size:24px; margin:30px 0 0 0; display: inline-block;">About this item</span><br>
+<span th:text="${bikePreview.getAbout()}"></span>
+</div>
+<div>
+<form th:action="@{/shareBike}" method="post">
+<input type="hidden" th:value="${bikePreview.getId()}" name="shareId" >
+<input type="submit" value="Share" class="buttonpul">
+</form>
+</div>
+
+</div>
+</div>
+<div>
+
+<table class="tabletd">
+<tr>
+<td>Stock Availability</td>
+<td style="width: 180px;text-align: center;">Yes/No</td>
+</tr>
+<tr>
+<td>Delivery Time</td>
+<td style="width: 180px;text-align: center;">10:30</td>
+</tr>
+
+<tr>
+<td>On Road Price:</td>
+<td style="width: 180px;text-align: center;">200000</td>
+</tr>
+<tr>
+<td>Booking Advance Amount (For Spot delivery)</td>
+<td style="width: 180px;text-align: center;">4000</td>
+</tr>
+<tr>
+<td>Booking advance amount (For advance booking)</td>
+<td style="width: 180px;text-align: center;">2000</td>
+</tr>
+
+</table>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+        </html>

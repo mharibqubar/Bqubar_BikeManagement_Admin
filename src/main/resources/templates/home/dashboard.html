@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="https://thymeleaf.org"
+      layout:decorate="_layout">
+   <div layout:fragment="content">
+  <div class="right_col" role="main">
+          <div class="">
+
+            <div class="page-title">
+              <div class="title_left">
+                <p th:text = "${name}"></p>
+              </div>        
+            </div>
+
+            <span th:text="${success} ? ${success} : ''"></span>
+
+            <div class="row">
+              <div class="col-md-12">
+              <div class="logocenter">
+                <img src="img/logobq.png" alt="logo" width="100%">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  </html>
